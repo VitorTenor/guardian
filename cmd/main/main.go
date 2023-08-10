@@ -6,7 +6,6 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/vitortenor/guardian/pkg/config/database/mariadb"
 	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/controller"
 	"github.com/vitortenor/guardian/pkg/routes"
 	"log"
 )
@@ -27,7 +26,7 @@ func main() {
 
 	fmt.Sprintf("databaseConnection: %v", databaseConnection)
 
-	routes.InitRoutes(&router.RouterGroup, controller.NewAuthenticationControllerInterface())
+	routes.InitRoutes(&router.RouterGroup, initAuthControllerDependencies(databaseConnection))
 
 	if err := router.Run(":8080"); err != nil {
 		log.Fatal("Error when trying to start the application", err)

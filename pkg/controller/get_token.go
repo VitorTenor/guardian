@@ -1,11 +1,11 @@
 package controller
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/vitortenor/guardian/pkg/config/logger"
 	"github.com/vitortenor/guardian/pkg/config/validation"
 	"github.com/vitortenor/guardian/pkg/controller/model/request"
+	"github.com/vitortenor/guardian/pkg/model"
 	"go.uber.org/zap"
 )
 
@@ -26,10 +26,17 @@ func (ac *authenticationControllerInterface) GetToken(c *gin.Context) {
 		return
 	}
 
-	logger.Info(fmt.Sprintf(authLogin.Email))
-	logger.Info(fmt.Sprintf(authLogin.Password))
+	authDomain := model.AuthLoginDomain(authLogin.Email, authLogin.Password)
 
-	c.JSON(200, gin.H{
-		"message": "pong",
-	})
+	token, refrsg, err := ac.service.AuthUserServices(authDomain)
+	if err != nil {
+		logger.Error("Error when trying to authenticate user",
+			err,
+			zap.String("journey", "getToken"),
+		)
+		c.JSON(err.Code, err)
+		return
+	}
+
+	c.JSON(200, token+refrsg)
 }
