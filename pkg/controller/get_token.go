@@ -5,6 +5,7 @@ import (
 	"github.com/vitortenor/guardian/pkg/config/logger"
 	"github.com/vitortenor/guardian/pkg/config/validation"
 	"github.com/vitortenor/guardian/pkg/controller/model/request"
+	"github.com/vitortenor/guardian/pkg/controller/model/response"
 	"github.com/vitortenor/guardian/pkg/model"
 	"go.uber.org/zap"
 )
@@ -28,7 +29,7 @@ func (ac *authenticationControllerInterface) GetToken(c *gin.Context) {
 
 	authDomain := model.AuthLoginDomain(authLogin.Email, authLogin.Password)
 
-	token, refrsg, err := ac.service.AuthUserServices(authDomain)
+	token, refreshToken, err := ac.service.AuthUserServices(authDomain)
 	if err != nil {
 		logger.Error("Error when trying to authenticate user",
 			err,
@@ -38,5 +39,10 @@ func (ac *authenticationControllerInterface) GetToken(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, token+refrsg)
+	response := response.AuthResponse{
+		AccessToken:  token,
+		RefreshToken: refreshToken,
+	}
+
+	c.JSON(200, response)
 }
