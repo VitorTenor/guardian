@@ -37,6 +37,6 @@ This route enables users to log in to the MusicStreamer platform securely. Users
 **Input:**
 ```json
 {
-  "username": "user",
+  "email": "email",
   "password": "password"
 }
