@@ -3,14 +3,14 @@ package model
 import "github.com/vitortenor/guardian/pkg/config/rest_error"
 
 type AuthDomainInterface interface {
-	GetId() string
-	SetId(string)
+	GetId() int
+	SetId(int)
 	GetEmail() string
 	GetPassword() string
 	GetName() string
+	SetName(string)
+	CheckPassword([]byte) *rest_error.Err
 	GenerateToken() (string, *rest_error.Err)
-	EncryptPassword() *rest_error.Err
-	CheckPassword(string) *rest_error.Err
 }
 
 func NewAuthDomain(email, password, name string) AuthDomainInterface {

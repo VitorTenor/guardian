@@ -1,18 +1,18 @@
 package model
 
 type authDomain struct {
-	id       string
+	ID       int
 	email    string
 	password string
 	name     string
 }
 
-func (ud *authDomain) GetId() string {
-	return ud.id
+func (ud *authDomain) GetId() int {
+	return ud.ID
 }
 
-func (ud *authDomain) SetId(id string) {
-	ud.id = id
+func (ud *authDomain) SetId(id int) {
+	ud.ID = id
 }
 
 func (ud *authDomain) GetEmail() string {
@@ -25,4 +25,8 @@ func (ud *authDomain) GetPassword() string {
 
 func (ud *authDomain) GetName() string {
 	return ud.name
+}
+
+func (ud *authDomain) SetName(name string) {
+	ud.name = name
 }

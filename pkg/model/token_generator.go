@@ -15,7 +15,7 @@ func (ud *authDomain) GenerateToken() (string, *rest_error.Err) {
 	secret := os.Getenv(JWT_SECRET_KEY)
 
 	claims := jwt.MapClaims{
-		"id":    ud.id,
+		"id":    ud.ID,
 		"email": ud.email,
 		"name":  ud.name,
 		"exp":   time.Now().Add(time.Hour * 24).Unix(),
