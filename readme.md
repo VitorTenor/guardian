@@ -28,15 +28,24 @@ The Authentication Application leverages a combination of cutting-edge technolog
 The Authentication Application offers essential routes and functionalities to support secure user authentication:
 
 ### Authentication Route
-
-* `POST /token`
-* `POST /token/refresh`
-
 This route enables users to log in to the MusicStreamer platform securely. Users submit their credentials in JSON format.
 
+* `POST /token`
+  
 **Input:**
 ```json
 {
   "email": "email",
   "password": "password"
 }
+```
+* `POST /token/refresh`
+
+**Input:**
+```json
+{
+  "refresh_token": "refresh_token"
+}
+```
+
+The output of both routes is a JSON payload containing the access token and refresh token. The access token is a JSON Web Token (JWT).
