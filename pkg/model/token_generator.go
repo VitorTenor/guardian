@@ -15,7 +15,7 @@ var (
 
 func (ud *authDomain) GenerateTokens() (string, string, *rest_error.Err) {
 	logger.Info("Init GenerateTokens",
-		zap.String("journey", "GenerateTokens"),
+		zap.String("journey", "generateTokens"),
 	)
 
 	secret := os.Getenv(JWT_SECRET_KEY)
@@ -32,31 +32,31 @@ func (ud *authDomain) GenerateTokens() (string, string, *rest_error.Err) {
 	if errr != nil {
 		logger.Error("Error when trying to generate access token",
 			errr,
-			zap.String("journey", "GenerateTokens"),
+			zap.String("journey", "generateTokens"),
 		)
 		return "", "", rest_error.NewInternalServerError("Error when trying to generate access token", errr)
 	}
 
 	logger.Info("Access Token Generated With Success, Starting to generate refresh token",
-		zap.String("journey", "GenerateTokens"),
+		zap.String("journey", "generateTokens"),
 	)
 
 	refreshTokenString, err := ud.generateRefreshToken(secret)
 	if err != nil {
 		logger.Error("Error when trying to generate refresh token",
 			err,
-			zap.String("journey", "GenerateTokens"),
+			zap.String("journey", "generateTokens"),
 		)
 		restErr := rest_error.NewInternalServerError("Error when trying to generate refresh token", err)
 		return "", "", restErr
 	}
 
 	logger.Info("Refresh Token Generated With Success",
-		zap.String("journey", "GenerateTokens"),
+		zap.String("journey", "generateTokens"),
 	)
 
 	logger.Info("GenerateTokens OK",
-		zap.String("journey", "GenerateTokens"),
+		zap.String("journey", "generateTokens"),
 	)
 
 	return accessTokenString, refreshTokenString, nil
@@ -86,7 +86,7 @@ func (ud *authDomain) generateRefreshToken(secret string) (string, *rest_error.E
 		return "", rest_error.NewInternalServerError("Error when trying to generate refresh token", err)
 	}
 
-	logger.Info("generateRefreshToken OK",
+	logger.Info("GenerateRefreshToken OK",
 		zap.String("journey", "generateRefreshToken"),
 	)
 
