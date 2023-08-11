@@ -31,7 +31,7 @@ func (ad *authDomainService) AuthUserServices(domain model.AuthDomainInterface) 
 	domain.SetId(user.ID)
 	domain.SetName(user.Name)
 
-	token, err := domain.GenerateToken()
+	token, refreshToken, err := domain.GenerateTokens()
 	if err != nil {
 		logger.Error("Error on generate token",
 			err,
@@ -44,5 +44,5 @@ func (ad *authDomainService) AuthUserServices(domain model.AuthDomainInterface) 
 		zap.String("journey", "AuthUserServices"),
 	)
 
-	return token, "", nil
+	return token, refreshToken, nil
 }

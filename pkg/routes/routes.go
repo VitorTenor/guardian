@@ -7,4 +7,5 @@ import (
 
 func InitRoutes(r *gin.RouterGroup, tokenController controller.AuthenticationControllerInterface) {
 	r.GET("/token", tokenController.GetToken)
+	r.GET("/token/refresh", tokenController.RenewToken)
 }

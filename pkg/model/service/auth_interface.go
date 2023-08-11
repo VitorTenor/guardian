@@ -18,4 +18,5 @@ type authDomainService struct {
 
 type AuthDomainService interface {
 	AuthUserServices(model.AuthDomainInterface) (string, string, *rest_error.Err)
+	RenewTokenServices(string) (string, string, *rest_error.Err)
 }

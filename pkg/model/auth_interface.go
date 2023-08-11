@@ -10,7 +10,8 @@ type AuthDomainInterface interface {
 	GetName() string
 	SetName(string)
 	CheckPassword([]byte) *rest_error.Err
-	GenerateToken() (string, *rest_error.Err)
+	GenerateTokens() (string, string, *rest_error.Err)
+	VerifyAndRefreshToken(string) (string, string, *rest_error.Err)
 }
 
 func NewAuthDomain(email, password, name string) AuthDomainInterface {
