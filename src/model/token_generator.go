@@ -2,8 +2,8 @@ package model
 
 import (
 	"github.com/golang-jwt/jwt"
-	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
+	"github.com/vitortenor/guardian/src/config/logger"
+	"github.com/vitortenor/guardian/src/config/rest_error"
 	"go.uber.org/zap"
 	"os"
 	"time"

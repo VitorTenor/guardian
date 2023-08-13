@@ -1,6 +1,6 @@
 package model
 
-import "github.com/vitortenor/guardian/pkg/config/rest_error"
+import "github.com/vitortenor/guardian/src/config/rest_error"
 
 type AuthDomainInterface interface {
 	GetId() int

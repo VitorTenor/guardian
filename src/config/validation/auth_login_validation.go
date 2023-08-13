@@ -8,7 +8,7 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	en_translation "github.com/go-playground/validator/v10/translations/en"
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
+	"github.com/vitortenor/guardian/src/config/rest_error"
 )
 
 var (

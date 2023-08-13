@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/vitortenor/guardian/pkg/model/service"
+	"github.com/vitortenor/guardian/src/model/service"
 )
 
 func NewAuthenticationControllerInterface(svc service.AuthDomainService) AuthenticationControllerInterface {

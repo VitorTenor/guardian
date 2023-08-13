@@ -2,8 +2,8 @@ package repository
 
 import (
 	"database/sql"
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
-	"github.com/vitortenor/guardian/pkg/model/repository/entity"
+	"github.com/vitortenor/guardian/src/config/rest_error"
+	"github.com/vitortenor/guardian/src/model/repository/entity"
 )
 
 type AuthRepository interface {

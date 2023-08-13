@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
-	"github.com/vitortenor/guardian/pkg/model"
+	"github.com/vitortenor/guardian/src/config/logger"
+	"github.com/vitortenor/guardian/src/config/rest_error"
+	"github.com/vitortenor/guardian/src/model"
 	"go.uber.org/zap"
 )
 

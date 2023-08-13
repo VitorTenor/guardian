@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/vitortenor/guardian/pkg/config/database/mariadb"
-	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/routes"
+	"github.com/vitortenor/guardian/src/config/database/mariadb"
+	"github.com/vitortenor/guardian/src/config/logger"
+	"github.com/vitortenor/guardian/src/routes"
 	"log"
 )
 

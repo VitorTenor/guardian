@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/vitortenor/guardian/pkg/controller"
+	"github.com/vitortenor/guardian/src/controller"
 )
 
 func InitRoutes(r *gin.RouterGroup, tokenController controller.AuthenticationControllerInterface) {

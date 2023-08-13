@@ -3,7 +3,7 @@ package mariadb
 import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/vitortenor/guardian/pkg/config/logger"
+	"github.com/vitortenor/guardian/src/config/logger"
 	"go.uber.org/zap"
 	"os"
 )

@@ -1,9 +1,9 @@
 package repository
 
 import (
-	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
-	"github.com/vitortenor/guardian/pkg/model/repository/entity"
+	"github.com/vitortenor/guardian/src/config/logger"
+	"github.com/vitortenor/guardian/src/config/rest_error"
+	"github.com/vitortenor/guardian/src/model/repository/entity"
 	"go.uber.org/zap"
 )
 

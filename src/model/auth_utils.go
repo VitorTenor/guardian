@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
+	"github.com/vitortenor/guardian/src/config/rest_error"
 	"golang.org/x/crypto/bcrypt"
 )
 

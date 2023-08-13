@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/vitortenor/guardian/pkg/config/rest_error"
-	"github.com/vitortenor/guardian/pkg/model"
+	"github.com/vitortenor/guardian/src/config/rest_error"
+	"github.com/vitortenor/guardian/src/model"
 )
 
 func (ad *authDomainService) RenewTokenServices(refreshToken string) (string, string, *rest_error.Err) {

@@ -2,10 +2,10 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/vitortenor/guardian/pkg/config/logger"
-	"github.com/vitortenor/guardian/pkg/config/validation"
-	"github.com/vitortenor/guardian/pkg/controller/model/request"
-	"github.com/vitortenor/guardian/pkg/controller/model/response"
+	"github.com/vitortenor/guardian/src/config/logger"
+	"github.com/vitortenor/guardian/src/config/validation"
+	"github.com/vitortenor/guardian/src/controller/model/request"
+	"github.com/vitortenor/guardian/src/controller/model/response"
 	"go.uber.org/zap"
 )
 
